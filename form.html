@@ -1,0 +1,90 @@
+<html>
+  <head>
+    <title>Sample Form</title>
+    <style>
+      body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .login-box {
+        border: 1px solid black;
+        display: flex;
+        justify-content: center;
+        width: fit-content;
+        padding: 30px;
+        border-radius: 5px;
+        background-color: rgb(244, 255, 251);
+      }
+      .login-form {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+      .login-form label {
+        font-weight: bold;
+        font-size: 20px;
+      }
+      .login-form input {
+        padding: 15px;
+        width: 350px;
+        height: 40px;
+        border-radius: 5px;
+        border: 1px solid gray;
+      }
+      .login-form input:focus {
+        outline: none;
+        border: 2px solid rgb(53, 133, 101);
+      }
+      .login-form button {
+        width: fit-content;
+        background: rgb(53, 133, 101);
+        padding: 10px;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        cursor: pointer;
+      }
+      .login-form button:hover {
+        background: rgb(113, 186, 157);
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>Login Form</h1>
+    <div class="login-box">
+      <form class="login-form" method="post" onsubmit="submitFunction()">
+        <label>Username:</label>
+        <input type="text" id="uname" required />
+        <br />
+        <label>Password:</label>
+        <input type="password" id="psd" required minlength="6" maxlength="15" />
+        <br />
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+  </body>
+
+  <script>
+    const userData = {
+      username: "Fatima Anjum",
+      password: "Fatima@123",
+    };
+    function submitFunction() {
+      var uname = document.getElementById("uname").value;
+      var psd = document.getElementById("psd").value;
+
+      if (uname === userData.username && psd === userData.password) {
+        alert("Login successful!");
+      } else if (uname !== userData.username) {
+        alert("Invalid username");
+      } else if (psd !== userData.password) {
+        alert("Invalid password");
+      } else {
+        alert("Login failed!");
+      }
+    }
+  </script>
+</html>
